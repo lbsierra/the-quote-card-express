@@ -1,0 +1,86 @@
+@import url('./css/reset.css');
+
+.main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.background-img {
+  position: absolute;
+  inset: 0;
+  background-image: url("/img/stars-2179083_1280.jpg"); 
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  filter: brightness(0.5);
+}
+
+.quote-container {
+  max-width: 700px;
+  text-align: center;
+  padding: 2rem;
+  border: 2px solid #fff;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.4); 
+  backdrop-filter: blur(1px);           
+}
+
+.quote-text {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.author-text {
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+article::before {
+	content: '\201c';
+	font-size: 3em;
+	font-family: 'Arial Black';
+	align-self: flex-start;
+	margin-left: 20px;
+  }
+
+  article::after {
+	content: '\201d';
+	font-size: 3em;
+	font-family: 'Arial Black';
+	align-self: flex-end;
+	margin-right: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .quote-text {
+      font-size: 1.2rem;
+    }
+    .author-text {
+      font-size: 0.9rem;
+    }
+
+    .quote-container {
+        width: 80%;
+        padding: 1rem;
+    }
+  }
+
+@media (max-width: 480px) {
+    .quote-text {
+      font-size: 1rem;
+    }
+    .author-text {
+      font-size: 0.8rem;
+    }
+  }
