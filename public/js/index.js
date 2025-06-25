@@ -1,13 +1,30 @@
 "use strict"
 
-const elements = {
+async function getRandomImage() {
+    const client_id = "mTST8ba9ZACUAsiazk7eyseTsiL2K2ePemOndP1o4Xw";
+    const endpoint = `https://api.unsplash.com/photos/random/?client_id=${client_id}`;
+    try {
+        const response = await fetch(endpoint);
+        const returnedData = await response.json()
+        const receivedPhotoUrl = returnedData.urls.regular;
+        console.log("Image URL:", receivedPhotoUrl);
+        const imgDiv = document.getElementById("background-img");
+        imgDiv.style.backgroundImage = `url(${receivedPhotoUrl})`;
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+getRandomImage();
+
+/* const elements = {
     quote: document.getElementById("quote"),
     author: document.getElementById("author"),
 };
 
 const quotes = [
     {
-        quote: "Grief if the price we pay for love.",
+        quote: "Grief is the price we pay for love.",
         author: "Queen Elizabeth II",
     },
 
@@ -35,4 +52,4 @@ function loopThroughQuotes() {
     }, 3000);
 }
 
-setTimeout(loopThroughQuotes, 3000);
+setTimeout(loopThroughQuotes, 3000); */
