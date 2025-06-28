@@ -8,7 +8,7 @@
   overflow: hidden;
 }
 
-#background-img {
+.background-img {
   position: absolute;
   inset: 0;
   background-image: url("../img/stars-2179083_1280.jpg"); 
@@ -90,10 +90,4 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-}
-
-.main {
-  min-height: 100vh;
-  min-width: 100vw;
-  outline: 5px dashed hotpink; /* for visibility */
 }
